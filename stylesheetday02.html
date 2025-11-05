@@ -43,19 +43,34 @@
     </style>
 </head>
 <body onload="setStyle()">
-    <div class="myDiv">
+    <div id="myDiv">
         <h1>Cascading Style Sheets</h1>
         <h2>Welcome to a World of Style!</h2>
-        <p type="button" value="Light Blue" onclick="setBackground()">CSS is Fun!</p>
+        <p>CSS is Fun!</p>
     </div>
+    <p>
+        <input type="button" value="Light Blue" onclick="setBackground1()">
+        <input type="button" value="Red" oninput="setBackground2()">
+    </p>
+    <p>
+        <input type="range" min="300" max="700" step="1" value="500" id="width" oninput="setWidth()" onclick="setBackground2()">
+    </p>
     <p>Copyright &copy; 2025 theunnoticeddesign</p>
     <script>
         function setStyle(){
             document.body.style.color = "green";
             document.body.style.backgroundColor = "yellow";
         }
-        function setBackground(){
+        function setBackground1(){
             document.getElementById("myDiv").style.backgroundColor = "lightblue";
+        }
+        function setBackground2(){
+            document.getElementById("myDiv").style.backgroundColor = "Red";
+        }
+        function setWidth(){
+            let width = document.getElementById("width").value;
+            console.log("Width: " + width);
+            document.getElementById("myDiv").style.width = width + "px";
         }
     </script>
 </body>
