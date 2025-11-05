@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 01 of CSS3</title>
+
+    <style>
+        body {
+            background-color: rgb(244, 250, 255);
+        }
+        
+        div {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: white;
+            border: medium brown solid;
+            color: brown;
+            padding: 0 10px 0 10px;
+            /* top, right, bottom, left */
+            margin: auto;
+            width: 500px;
+            border-radius: 20px;
+            box-shadow: 5px 15px 20px rgb(156, 156, 156);
+
+        }
+
+        .div {
+            opacity: 0;
+            animation-name: fadeIn;
+            animation-duration: 7s;
+            animation-timing-function: ease;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body onload="setStyle()">
+    <div class="myDiv">
+        <h1>Cascading Style Sheets</h1>
+        <h2>Welcome to a World of Style!</h2>
+        <p type="button" value="Light Blue" onclick="setBackground()">CSS is Fun!</p>
+    </div>
+    <p>Copyright &copy; 2025 theunnoticeddesign</p>
+    <script>
+        function setStyle(){
+            document.body.style.color = "green";
+            document.body.style.backgroundColor = "yellow";
+        }
+        function setBackground(){
+            document.getElementById("myDiv").style.backgroundColor = "lightblue";
+        }
+    </script>
+</body>
+</html>
